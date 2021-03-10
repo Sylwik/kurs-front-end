@@ -1,0 +1,141 @@
+body {
+  background-color: #98CA32;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  margin: 0;
+  padding-bottom: 30px;
+}
+
+body #main-header {
+  text-align: center;
+  color: #E4F132;
+  font-weight: bold;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px #559E54;
+}
+
+body .section {
+  margin: 0 5% 0 5%;
+  background-color: #559E54;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  font-size: 1rem;
+  padding: 1%;
+}
+
+body .section .main-txt {
+  background-color: #F5F7D4;
+  width: 80%;
+  margin: 10px;
+  padding: 10px 3% 10px 3%;
+  border-radius: 10px;
+  color: #0A3409;
+  text-align: justify;
+}
+
+body .section .img-box {
+  background-color: #E4F132;
+  width: 30%;
+  margin: 1%;
+  border-radius: 10px;
+}
+
+body .section .img-box img {
+  max-width: 80%;
+  display: block;
+  margin: 5px auto 5px auto;
+}
+
+body #grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 300px 300px;
+      grid-template-rows: 300px 300px;
+  margin: 2px 5% 2px 5%;
+}
+
+body #grid .dog-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body #grid .dog-img img {
+  display: block;
+  margin: auto;
+  width: 80%;
+  height: 80%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+body #reward {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-flow: row-reverse;
+          flex-flow: row-reverse;
+}
+
+body #footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #E4F132;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 2px;
+}
+
+body #footer .link {
+  display: block;
+  border: solid;
+}
+
+body #footer a {
+  text-decoration: none;
+  margin: 10px;
+  color: #0A3409;
+}
+
+body #footer a:hover {
+  color: #559E54;
+}
+
+body #footer i {
+  font-size: 3rem;
+}
+
+.dog-img:nth-child(1) {
+  background-color: #68ae67;
+}
+
+.dog-img:nth-child(2) {
+  background-color: #7fbb7f;
+}
+
+.dog-img:nth-child(3) {
+  background-color: #97c796;
+}
+
+.dog-img:nth-child(4) {
+  background-color: #aed4ad;
+}
+
+.dog-img:nth-child(5) {
+  background-color: #c5e0c5;
+}
+
+.dog-img:nth-child(6) {
+  background-color: #dcecdc;
+}
+/*# sourceMappingURL=style.css.map */

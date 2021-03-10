@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <style>
+        body{
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            width: 100vw;
+            height: 100vh;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        main *{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+        main {
+            position: relative;
+            margin: 10%;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let game = {
+            // życia w grze
+            lives: 5,
+            // obniżanie żyć
+            decLives(){
+                this.lives--;
+                // dopinamy do elementu
+                document.querySelector(".lives").innerHTML = this.lives;
+                // sprawdzamy czy gracz ma jeszcze życia
+                if(this.lives == 0){
+                    game.over(false);
+                }
+            },
+            time: 10,
+            interval: ()=>{setInterval(()=>{
+                game.time--;
+                if(game.time == 0) {
+                    game.over(false);
+                }
+                document.querySelector(".time").innerHTML = game.time;
+            },1000)
+        },
+            plane: document.createElement("main"),
+            setPlane(){
+                document.body.append(this.plane);
+                this.plane.style.border = "2px dashed black";
+                let dim = 0;
+                if(window.innerWidth > window.innerHeight){
+                    dim = window.innerHeight;
+                }else{
+                    dim = window.innerWidth;
+                }
+                this.plane.style.width = dim + "px";
+                this.plane.style.height = dim + "px";
+                document.querySelector(".lives").innerHTML = this.lives;
+                document.querySelector(".time").innerHTML = game.time;
+            },
+            walls: {
+                wallsTemplates: [
+                    [   
+                        [0,5,10,10, "", "start"],
+                        [0,0,30,5, "red"],
+                        [0,15,20,5, "pink"],
+                        [30,0,5,30, "blue"],
+                        [20,15,5,30, "pink"],
+                        [20,40,30,5, "yellow"],
+                        [45,15,5,30, "red"],
+                        [35,0,30,5, "pink"],
+                        [90,90,10,10, "", "meta"]
+                    ],
+                    [
+                        [0,30,50,5, "orange"]
+                    ]
+                ],
+                build(stage = 0){
+                    for(w of this.wallsTemplates[stage]){
+                        this.singleWall( w[0], w[1], w[2], w[3], w[4], w[5]);
+                    };
+                },
+                singleWall(x, y, w, h, c, type = "wall"){
+                   let wall = document.createElement("div");
+                   game.plane.append(wall);
+                   wall.style.width = w + "%";
+                   wall.style.height = h + "%";
+                   wall.style.marginLeft = x + "%";
+                   wall.style.marginTop = y + "%";
+                   wall.style.backgroundColor = c;
+                   wall.className = type;
+                   if(type == "meta"){
+                       wall.style.backgroundColor = "black";
+                   }else if(type == "start"){
+                       wall.style.backgroundColor = "green";
+                       wall.onclick = ()=>{game.start();};
+                }else if(type == "lives" || type == "time"){
+                    wall.style.border = "2px solid black";
+                }}
+            },
+            start(){
+                console.log("start");
+                this.interval();
+                document.querySelector(".start").onclick = ()=>{};
+                document.querySelector(".meta").onmouseover = ()=>{game.over(true);};
+                let walls = document.querySelectorAll(".wall");
+                for(w of walls){
+                    w.onmouseover = () => {this.decLives();};
+                }
+            },
+            over(isWin){
+                clearInterval(this.interval);
+                document.querySelector(".start").onclick = () => {game.start();};
+                document.querySelector(".meta").onmouseover = () => {};
+                let walls = document.querySelectorAll(".wall");
+                for(w of walls){
+                    w.onmouseover = () => {};
+                }
+                if(isWin){
+                    console.log("wygrałeś");
+                }else{
+                    console.log("przegrałeś");
+                }
+            }
+        };
+        // size of game.plane
+        game.walls.build(0);
+        game.setPlane();
+        window.onresize = ()=>{
+            game.setPlane();
+        };
+    </script>
+</body>
+</html>

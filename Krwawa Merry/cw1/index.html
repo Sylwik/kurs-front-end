@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.MyBtn').click(function(){
+                  $('#Mymodal').modal('show')
+            });
+        });
+        </script>
+        <style>
+            #logo {
+                width: 200px;
+            }
+            #o-nas {
+                min-width: 400px;
+            }
+        </style>
+</head>
+ <body>
+
+    <header class="text-center" style="background-color: black;">
+        <img src="https://raw.githubusercontent.com/apietryga/Font-end-sources/master/lekcja5/bootstrap%20-%20images/logo.png" class="rounded w-25">
+    </header>
+
+      <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top" >
+        <a class="navbar-brand w-25 ml-5" href="#">Menu</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link pr-3" href="#">O nas<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link pl-3 pr-3" href="#produkty">Sklep</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link pl-3 pr-3" href="#galeria">Galeria</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled pl-3" href="#" tabindex="-1" aria-disabled="true">Koszyk (0)</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="d-flex flex-wrap-reverse mt-2 justify-content-center" style="background-color: black;">
+        <div id="o-nas" class="media-body p-4" style="color: white;">
+          <h5 class="mt-0 mb-1">O nas</h5>
+          <p>I know there will be sacrifice but that's the price. Are you brave enough to let me see your peacock? Be your teenage dream tonight. Uh-huh, I see you. There’s no going back. Yeah, we maxed our credit cards and got kicked out of the bar. So let me get you in your birthday suit. You may fall in love when you meet her. Had the world in the palm of your hands. Don't let the greatness get you down, oh, oh yeah. Now we talking astrology, getting our nails did, all Japanese-y. Make me your Aphrodite.</p>
+        </div>
+        <div id="logo" class="d-flex align-items-center justify-content-center">
+            <img  class="w-100" src="https://raw.githubusercontent.com/apietryga/Font-end-sources/master/lekcja5/bootstrap%20-%20images/logo.png" >
+        </div>
+      </div>
+
+      <div id="produkty" class="media p-4" style="color: black;">
+        <div class="media-body">
+          <h5 class="mt-0 mb-1">Sklep</h5>
+          <p>So let me get you in your birthday suit. You may fall in love when you meet her. Had the world in the palm of your hands. Don't let the greatness get you down, oh, oh yeah. Now we talking astrology, getting our nails did, all Japanese-y. Make me your Aphrodite.</p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm ">
+            <div class="card mb-4" style="width: 18rem;">
+                <img src="https://raw.githubusercontent.com/apietryga/Font-end-sources/master/lekcja5/bootstrap%20-%20images/t1.png" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">Toster 1</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a  class="MyBtn btn btn-primary" style="background-color: black;">Więcej informacji</a>
+                </div>
+              </div>
+          </div>
+          <div class="col-sm">
+            <div class="card mb-4" style="width: 18rem;">
+                <img src="https://raw.githubusercontent.com/apietryga/Font-end-sources/master/lekcja5/bootstrap%20-%20images/t2.png" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">Toster 2</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a class="MyBtn btn btn-primary" style="background-color: black;">Więcej informacji</a>
+                </div>
+              </div>
+          </div>
+          <div class="col-sm">
+            <div class="card mb-4" style="width: 18rem;">
+                <img src="https://raw.githubusercontent.com/apietryga/Font-end-sources/master/lekcja5/bootstrap%20-%20images/t3.png" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">Toster 3</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a class="MyBtn btn btn-primary" style="background-color: black;">Więcej informacji</a>
+                </div>
+              </div>
+          </div>
+          <div class="col-sm">
+            <div class="card mb-4" style="width: 18rem;">
+                <img src="https://raw.githubusercontent.com/apietryga/Font-end-sources/master/lekcja5/bootstrap%20-%20images/t4.png" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">Toster 4</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a class="MyBtn btn btn-primary" style="background-color: black;">Więcej informacji</a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="Mymodal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Szczegóły</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Cena: 25zł <br>
+                Materiał: stal nierdzewna, plastik z recyklingu <br>
+              Kolor: biały <br>
+              Sed soluta: iste molestias <br>
+              Sequi: voluptatibus<br>
+              Deleniti: dolore aperiam <br>
+              Sapiente: vel itaque neque fuga</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary"  style="background-color: black;">Kupuję!</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Anuluj</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="galeria"></div>
+      <div id="carouselExampleIndicators" class="carousel slide mt-5 mb-5" data-ride="carousel" style="background-color: black;">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://raw.githubusercontent.com/apietryga/Font-end-sources/master/lekcja5/bootstrap%20-%20images/t1.png" class="d-block w-50 mx-auto">
+          </div>
+          <div class="carousel-item">
+            <img src="https://raw.githubusercontent.com/apietryga/Font-end-sources/master/lekcja5/bootstrap%20-%20images/t2.png" class="d-block w-50 mx-auto">
+          </div>
+          <div class="carousel-item">
+            <img src="https://raw.githubusercontent.com/apietryga/Font-end-sources/master/lekcja5/bootstrap%20-%20images/t3.png" class="d-block w-50 mx-auto">
+          </div>
+          <div class="carousel-item">
+            <img src="https://raw.githubusercontent.com/apietryga/Font-end-sources/master/lekcja5/bootstrap%20-%20images/t4.png" class="d-block w-50 mx-auto">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+      <footer style="background: rgb(50, 50, 50);" class="pr-5 page-footer font-small blue d-flex justify-content-between">
+        <img class="w-25 mt-3 mb-3" src="https://raw.githubusercontent.com/apietryga/Font-end-sources/master/lekcja5/bootstrap%20-%20images/nav_logo.png">
+        <div class="d-flex flex-column" style="color: white;">
+            Sprzedaż:
+          <a href="#" class="p-1" style="color: white;">kontakt</a>
+        </div>
+        <div class="d-flex flex-column align-items-center">
+            <a href="#" class="p-0" style="color: white;">zespół</a>
+            <a href="#" class="p-0" style="color: white;">social media</a>
+            <a href="#" class="p-0" style="color: white;">link</a>
+          </div>
+      </footer>
+
+      <div class="alert alert-dark alert-warning alert-dismissible fade show fixed-bottom ml-5 mr-5" role="alert">
+        <strong>Holy guacamole! </strong> Ta strona nie używa plików cookies.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+</body>

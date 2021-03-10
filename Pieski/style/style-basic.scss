@@ -1,0 +1,38 @@
+$font-stack: 'Source Sans Pro', sans-serif;
+$primary-color: white;
+$bgColor: pink;
+$fontColor: red;
+
+%paczka {
+    border: 1px solid purple;
+    padding: 10px;
+}
+@mixin style($rozmiar,$wartosc) {
+    border: $rozmiar dashed blue;
+    font-size: $wartosc;
+}
+body {
+    background-color: $bgColor;
+    section {
+        margin: 20px 10% 20px 10%;
+        border: 2px solid #0A3409;
+    }
+    @include style(5px,35px);
+    p {
+        color: $fontColor;
+        @extend %paczka;
+    }
+    .flex {
+        display: flex;
+        height: 130px;
+        div {
+            border: green solid 3px;
+        } 
+    }
+}
+@for $i from 1 through 4 {
+    .flex-item#{$i}{
+        width: 40px * $i;
+        background-color: lighten(black, $i*25%)
+    }
+}
